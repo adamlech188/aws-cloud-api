@@ -16,4 +16,8 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - target/aws-cloud-api-0.0.1-SNAPSHOT.jar
+    - target/*.jar
+    - scripts/*.sh
+    - appspec.yml
+  discard-paths: yes
+ 
