@@ -19,4 +19,9 @@ public class AWSCloudApiController {
 		return ResponseEntity.ok(hostname);
 	}
 	
+	@GetMapping("/health")
+	public ResponseEntity<String> getHealth() {
+		return ResponseEntity.ok("Health ping.");
+	}
+	
 }
