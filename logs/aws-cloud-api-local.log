@@ -1,0 +1,17 @@
+2022-09-16 07:47:22.814  INFO 19304 --- [main] com.demo.aws.AwsCloudApiApplication      : Starting AwsCloudApiApplication using Java 17.0.1 on DESKTOP-5U0LBP4 with PID 19304 (C:\Users\adaml\work-spaces\Spring_Data_JPA\aws-cloud-api\target\classes started by adaml in C:\Users\adaml\work-spaces\Spring_Data_JPA\aws-cloud-api)
+2022-09-16 07:47:22.817  INFO 19304 --- [main] com.demo.aws.AwsCloudApiApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-09-16 07:47:23.596  INFO 19304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-16 07:47:23.606  INFO 19304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-16 07:47:23.607  INFO 19304 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-16 07:47:23.700  INFO 19304 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-16 07:47:23.700  INFO 19304 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 837 ms
+2022-09-16 07:47:24.061  INFO 19304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-16 07:47:24.072  INFO 19304 --- [main] com.demo.aws.AwsCloudApiApplication      : Started AwsCloudApiApplication in 1.72 seconds (JVM running for 2.446)
+2022-09-16 07:48:56.694  INFO 19304 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-16 07:48:56.694  INFO 19304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-16 07:48:56.695  INFO 19304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-09-16 07:48:56.720  INFO 19304 --- [http-nio-8080-exec-1] c.d.a.controller.AWSCloudApiController   : Hostname was called
+2022-09-16 07:49:35.109  INFO 19304 --- [http-nio-8080-exec-3] c.d.a.controller.AWSCloudApiController   : Hostname was called
+2022-09-16 07:49:49.208  INFO 19304 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-09-16 07:49:49.227  INFO 19304 --- [RMI TCP Connection(12)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-16 07:49:49.228  INFO 19304 --- [RMI TCP Connection(12)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
