@@ -1,0 +1,10 @@
+services:
+  web:
+    image: "aws-cloud-api"
+    ports: 
+      - "8080:8080"
+    environment:
+      - AWS_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=AKIA3HGUGIV2KN3X5AQB
+      - AWS_SECRET_ACCESS_KEY=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
+    container_name: aws-container
