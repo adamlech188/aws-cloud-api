@@ -13,7 +13,7 @@ public class AWSCloudApiController {
 
 	@GetMapping("/hello")
 	public ResponseEntity<String> getHello() {
-		return ResponseEntity.ok("Hello from Adam v2");
+		return ResponseEntity.ok("Hello from Adam v4");
 	}
 	
 	@GetMapping("/hostname")
