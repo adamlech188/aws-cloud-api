@@ -25,7 +25,7 @@ public class ReceiveSQSMessageScheduler {
 	}
 
 
-	@Scheduled(fixedRate = 2, timeUnit = TimeUnit.SECONDS)
+	//@Scheduled(fixedRate = 2, timeUnit = TimeUnit.SECONDS)
 	public void receiveMessage() {
 		String url = amazonSQS.getQueueUrl("EventsFromS3").getQueueUrl();
 		
