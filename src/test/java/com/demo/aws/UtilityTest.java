@@ -12,9 +12,4 @@ public class UtilityTest {
         String hostname = System.getenv("HOSTNAME");
         assertThat(hostname).isNotNull();
     }
-
-    @Test
-    public void test_Failure() {
-       fail();
-    }
 }
