@@ -1,3 +1,0 @@
-2023-06-17 09:14:30.338  INFO 36236 --- [main] c.demo.aws.AwsCloudApiApplicationTests   : Starting AwsCloudApiApplicationTests using Java 17.0.6 on DESKTOP-G6J0AC8 with PID 36236 (started by adaml in C:\Users\adaml\my-development\aws-cloud-api)
-2023-06-17 09:14:30.342  INFO 36236 --- [main] c.demo.aws.AwsCloudApiApplicationTests   : No active profile set, falling back to 1 default profile: "default"
-2023-06-17 09:14:31.718  INFO 36236 --- [main] c.demo.aws.AwsCloudApiApplicationTests   : Started AwsCloudApiApplicationTests in 1.655 seconds (JVM running for 2.312)

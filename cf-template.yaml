@@ -1,0 +1,77 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Template for deploying Spring Boot application to EC2 Instances
+
+Resources:
+  EC2Role:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: EC2-Role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+               - 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforAWSCodeDeploy
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
+  CodeDeployRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: CodeDeploy-Role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - codedeploy.amazonaws.com
+            Action:
+               - 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole
+  AwsCloudApiEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      IamInstanceProfile: !Ref AWSCloudApiInstanceProfile
+      ImageId: ami-0a64d4b6338a150a7
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        - !GetAtt AWSCloudApiSecurityGroup.GroupId
+      KeyName: EC2Key
+      Tags:
+        - Key: Name
+          Value: aws-cloud-api-ec2-instance
+
+
+  AWSCloudApiSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security Groupd for AWS Cloud Api EC2 Instance
+      SecurityGroupIngress:
+        -
+          IpProtocol: "tcp"
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: "0.0.0.0/0"
+        -
+          IpProtocol: "tcp"
+          FromPort: 22
+          ToPort: 22
+          CidrIp: "0.0.0.0/0"
+      Tags:
+        -
+          Key: Name
+          Value: aws-cloud-api-security-group
+
+  AWSCloudApiInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      InstanceProfileName: aws-cloud-api-ec2-profile
+      Roles:
+        - !Ref EC2Role
+
+
