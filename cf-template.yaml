@@ -73,5 +73,24 @@ Resources:
       InstanceProfileName: aws-cloud-api-ec2-profile
       Roles:
         - !Ref EC2Role
-
-
+  AWSCloudApiCodeDeployApplication:
+    Type: AWS::CodeDeploy::Application
+    Properties:
+      ApplicationName: aws-cloud-api
+      ComputePlatform:  Server
+  AWSCloudApiDeploymentGroup:
+    Type: AWS::CodeDeploy::DeploymentGroup
+    Properties:
+      ApplicationName: aws-cloud-api
+      DeploymentGroupName: aws-cloud-api-group
+      ServiceRoleArn: !GetAtt CodeDeployRole.Arn
+      DeploymentStyle:
+        DeploymentOption: WITHOUT_TRAFFIC_CONTROL
+        DeploymentType: "IN_PLACE"
+      DeploymentConfigName: CodeDeployDefault.AllAtOnce
+      Ec2TagFilters:
+        -
+          Type: KEY_AND_VALUE
+          Key: Name
+          Value: aws-cloud-api-ec2-instance
+      
